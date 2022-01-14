@@ -1,7 +1,7 @@
 @extends('layouts.default')
 @section('title','home')
 @section('content')
-    <div class="jumbotron">
+    <div class="p-5 bg-light rounded-3">
         <h1>Hello ZHEN!</h1>
         <p class="lead">你现在所看到的是<strong>ZHEN</strong></p>
         <p>一切，将从这里开始。</p>
