@@ -11336,3 +11336,14 @@ section.user_info h1, section.user_info .h1 {
   min-width: 50px;
   border-radius: 50%;
 }
+
+/* User edit */
+.gravatar_edit {
+  padding-bottom: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
+.gravatar_edit .gravatar {
+  float: none;
+  max-width: 70px;
+}

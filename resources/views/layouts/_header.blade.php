@@ -10,7 +10,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="nav-dropdown">
                         <li><a href="{{route('users.show',Auth::user())}}" class="dropdown-item" data-toggle="dropitem">个人中心</a></li>
-                        <li><a href="#" class="dropdown-item">编辑资料</a></li>
+                        <li><a href="{{route('users.edit',Auth::user())}}" class="dropdown-item">编辑资料</a></li>
                         <li><hr class="dropdown-divider"/></li>
                         <li><a href="#" class="dropdown-item" id="logout">
                             <form method="POST" action="{{route('logout')}}" class="d-grid">
