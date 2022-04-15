@@ -6,14 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-use Symfony\Component\HttpKernel\Exception\HttpException;
-
 class UsersController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth',[
-            'except'=>['show','create','store']
+            'except'=>['show','create','store','index']
         ]);
         $this->middleware('guest',[
             'only'=>['create']
@@ -52,11 +50,7 @@ class UsersController extends Controller
 
     public function edit(User $user)
     {
-        try{
-            $this->authorize('update',$user);
-        }catch(\Exception $e){
-            return redirect()->back();
-        }
+        $this->authorize('update',$user);
 
         return view('users.edit',compact('user'));
     }
@@ -79,4 +73,9 @@ class UsersController extends Controller
         return redirect()->route('users.show',$user->id);
     }
 
+    public function index()
+    {
+        $users=User::all();
+        return view('users.index',compact('users'));
+    }
 }
